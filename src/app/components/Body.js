@@ -6,7 +6,7 @@ import { useTypewriter, Cursor } from "react-simple-typewriter";
 function Body() {
   const animationData = require("../../../public/assets/projects.json");
   const [text, count] = useTypewriter({
-    words: ["Hi, My name is Victor", "Learn with me", "I Love to code More"],
+    words: ["Hi, My name is Victor", "I Love to code"],
     loop: true,
     delaySpeed: 2000,
   });

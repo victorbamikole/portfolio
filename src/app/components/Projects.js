@@ -1,13 +1,15 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 function Projects() {
+    const router = useRouter();
   const cardsData = [
     {
       name: "Quickteller Paypoint",
       image:
         "https://play-lh.googleusercontent.com/mARUNHonOc6MW2rsbr7V9h1CMM0EbloWbfOw7E64K_r2QwCzTPAmaOD_VjlzgT4syA=w480-h960-rw",
-      title: "Frontend Developer at Chance",
+      link: "https://play.google.com/store/search?q=quickteller+paypoint+for+agent&c=apps&hl=en&gl=US",
       porfolioImage:
         "https://play-lh.googleusercontent.com/zW2JMuisZOz_ctV-pMSdX0xJd9QDLtB-pd5FUtws5J91Iy6d7l9hn9J_BSbP6cFNoB8=w2560-h1440-rw",
       porfolioImage2:
@@ -22,6 +24,7 @@ function Projects() {
     {
       name: "Hotel Voyage",
       image: "",
+      link: "https://play.google.com/store/apps/details?id=com.decagon.hbapplicationgroupa&hl=en&gl=US",
       porfolioImage:
         "https://play-lh.googleusercontent.com/Uw3XFGp7r7bM3pREPajgXU_2mZH17t-Ruc1YCGOOKVG8koB2Z8pa0YKm_y4JDzE0NBMo=w2560-h1440-rw",
       porfolioImage2:
@@ -37,6 +40,7 @@ function Projects() {
       name: "Mobil Find",
       image:
         "https://media.licdn.com/dms/image/C4D0BAQExtG371zD5dA/company-logo_200_200/0/1669296742664/codefeast_logo?e=1701907200&v=beta&t=LA1tehO1JpZgaHMElen6VrWF5xemCuq6bozHh5vY3MM",
+      link: "https://play.google.com/store/apps/details?id=com.decagon.mobifind&hl=en%E2%89%B7=US",
       porfolioImage:
         "https://play-lh.googleusercontent.com/GwdpSKm2lg524hpqQ__F75ONwGNk5Twy26uFbsT79wmvQJxjKBcFX5DHFy6f9g-Wmgk=w2560-h1440-rw",
       porfolioImage2:
@@ -49,6 +53,29 @@ function Projects() {
       ],
     },
   ];
+
+  const navigateToLink = (link) => {
+    // Replace '/your-linkedin-url' with the actual LinkedIn profile URL
+    router.push(
+      link
+      // "https://play.google.com/store/apps/details?id=com.decagon.mobifind&hl=en%E2%89%B7=US"
+    );
+  };
+  const navigateToLinkQuickteller = (link) => {
+    // Replace '/your-linkedin-url' with the actual LinkedIn profile URL
+    router.push(
+      link
+      // "https://play.google.com/store/search?q=quickteller+paypoint+for+agent&c=apps&hl=en&gl=US"
+    );
+  };
+
+  const navigateToLinkHotelVoyage = (link) => {
+    // Replace '/your-linkedin-url' with the actual LinkedIn profile URL
+    router.push(
+      link
+      // "https://play.google.com/store/apps/details?id=com.decagon.hbapplicationgroupa&hl=en&gl=US"
+    );
+  };
   const [posts, setPosts] = useState([]);
   useEffect(() => {
     // getData()
@@ -81,6 +108,14 @@ function Projects() {
               <div className="h-100 mx-2">
                 <img src={item?.porfolioImage2} />
               </div>
+            </div>
+            <div className="h-100 mx-2">
+              <button
+                onClick={() => navigateToLink(item?.link)}
+                className="hidden md:inline-block text-white bg-blue-500 px-4 py-2 rounded-full hover:bg-blue-600 mt-4"
+              >
+                Link
+              </button>
             </div>
           </div>
         ))}
