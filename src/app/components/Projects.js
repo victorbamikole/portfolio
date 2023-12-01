@@ -112,7 +112,7 @@ function Projects() {
             <div className="h-100 mx-2">
               <button
                 onClick={() => navigateToLink(item?.link)}
-                className="hidden md:inline-block text-white bg-blue-500 px-4 py-2 rounded-full hover:bg-blue-600 mt-4"
+                className="md:inline-block text-white bg-blue-500 px-4 py-2 rounded-full hover:bg-blue-600 mt-4"
               >
                 Link
               </button>
